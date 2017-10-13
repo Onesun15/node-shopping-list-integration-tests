@@ -49,7 +49,45 @@ describe('Recipes', function() {
         res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
       });
   });
+  it('should update items on PUT', function(){
+      
+    const updateData = {
+      name: 'foo',
+      ingredients: ['ice cream', 'ketchup']
+    };
 
-
-
+    return chai.request(app)
+      // first have to get so we have an idea of object to update
+      .get('/recipes')
+      .then(function(res) {
+        updateData.id = res.body[0].id;
+        // this will return a promise whose value will be the response
+        // object, which we can inspect in the next `then` back. Note
+        // that we could have used a nested callback here instead of
+        // returning a promise and chaining with `then`, but we find
+        // this approach cleaner and easier to read and reason about.
+        return chai.request(app)
+          .put(`/recipes/${updateData.id}`)
+          .send(updateData);
+      })
+      // prove that the PUT request has right status code
+      .then(function(res) {
+        res.should.have.status(204);
+      });
+  });
+  it('should delete items on DELETE', function() {
+    return chai.request(app)
+      // first have to get so we have an `id` of item
+      // to delete
+      .get('/recipes')
+      .then(function(res) {
+        return chai.request(app)
+          .delete(`/recipes/${res.body[0].id}`);
+      })
+      .then(function(res) {
+        res.should.have.status(204);
+      });
+  });
 });
+
+
