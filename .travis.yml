@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy: damp-hollows-82733
+  provider: heroku
+  api_key:
+    secure: vOpWLyFg2PYV19cv7izz/nyYknZHTIKXLOmr1DbWcS5FB1BJu8InkAND9nBuQTn/1dVgeE339cQlgRbHG4bYpThtpBbeMqXnWvbHrqaeEMBNrf7j2Gx5iDt84nKqQkjxceAYoeD8nNFYZiLsqLSGYrlyBcgpGgCMlWl9S//YBjg5Lta+hvKK3oHNxjZ0zJh/3dQgg0kHQGdsnK+LGtiiBGS/XdxDy7iPrPhLdzguxuYp2COrgUx/D1Pf+1SDTRDPXnU0eaUfwwC/YnksRPGNbBEzJdlCdKou1JxBn7H636kNEIc3r/RWi4m2XZ9U8sJOrDJMoX50uoiz2u94yTvRHY7tEzrXD3VA4+LXX8uUR82tfVV/oHIIgolg6eElgI6olbJ8Cye+6LkfSQZ7VJJOoG2F/NFeOgLQbiCNBeYKMTfxS5dHikqOjR1j8D7U9fQ9uBUE8Vk7I2B4H0/4S/Xryd+Y4/pGLoWyu8XYE2y+7HThB80BLM2puE1OYAaDTehu5wE0KIJcK5rl39kg0ZOOlwpyuy8yldpDsv4guzy7Uak8dRmlpMvU6dB6+tMZTxhyZdaOLsv0Dc7W4NxgLNOYXIKIUaio8yEI98+DPGatE5/FZ9V0rqTfsJGHEfDE8pZczDnCNYxLvBRrELbwIDDycfWj6OON9zLQgrzZJW9cg+M=
+  app: node-shopping-list-integration-tests
+  on:
+    repo: Onesun15/node-shopping-list-integration-tests
